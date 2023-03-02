@@ -8,7 +8,8 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import dayjs, { Dayjs } from 'dayjs';
 import ActionBarComponentProps from "../DatePicker/datePicker";
-// import SeatMap from "../SeatMap/SeatMap";
+import TableData from '../Detail/TableData'
+import SeatMap from "../SeatMap/SeatMap";
 
 
 
@@ -17,6 +18,7 @@ const Detail = () => {
 
     const location = useLocation();
     const data = location.state;
+    
 
     return (
         <>
@@ -24,20 +26,20 @@ const Detail = () => {
             <Container>
                 {console.log(data)}
                 <Background>
-                    <img src={data.cardImg} alt={data.title} />
+                    <img src={data.bgImg} alt={data.title} />
                 </Background>
                 {/* <ImageTtitle>
                 <img src={data.cardImg} alt={data.title}/>
             </ImageTtitle> */}
                 <ContentMeta>
-                    {/* <Controls>
+                    <Controls>
                     <Player>
                         <img src="/images/play-icon-black.png" alt=""/>
-                        <span>Play</span>
+                        <span>ICC TV</span>
                     </Player>
                     <Trailer>
                         <img src="/images/play-icon-white.png" alt=""/>
-                        <span>Trailer</span>
+                        <a href="https://www.youtube.com/watch?v=rZKn3-f3dfM&ab_channel=Digital2Sports"><span>Trailer</span></a>
                     </Trailer>
                     <AddList>
                         <span/>
@@ -48,7 +50,7 @@ const Detail = () => {
                             <img src="/images/group-icon.png" alt=""/>
                         </div>
                     </GroupWatch>
-                </Controls> */}
+                </Controls>
                     <Description>
                         {data.title}
                     </Description>
@@ -59,9 +61,9 @@ const Detail = () => {
             </Container>
             <MatchesSchedule>
                 <div className="container">
-                    <h1 className="white">Matches Schedule</h1>
+                    <h1 className="white">Qualifiers</h1>
                     <div className="content">
-
+                    <TableData/>
                     </div>
                 </div>
             </MatchesSchedule>
@@ -80,18 +82,22 @@ const Detail = () => {
                     <button className="ticketBook">
                         Select Seats
                     </button>
-                    {/* {isBooking ?
+                    {isBooking ?
             <SeatMap/>
-                : null} */}
+                : null}
                 <a href="/stadiumview"><button className="ticketBook">Seat View in 3D</button></a>
+            <Payment>
+                <a href="/checkout"><button className="ticketBook">Proceed to Payment</button></a>
+            </Payment>
                 </div>
-            </BookTickets>
-            
-
-            
+            </BookTickets>   
         </>
     )
 }
+
+const Payment = styled.div`
+   
+`
 
 const DatePicker = styled.div`
     // border:1px solid red;
@@ -106,7 +112,8 @@ const DatePicker = styled.div`
 `
 
 const BookTickets = styled.div`
-width:900px
+
+    width:100%;
     margin:auto;
     display:flex;
     flex-direction:row;
@@ -116,7 +123,7 @@ width:900px
         display:flex;
         flex-direction:column;
         align-items:center;
-        width:500px;
+        width:50%;
         gap:40px;
 
     }
@@ -141,13 +148,19 @@ width:900px
 
 
 const MatchesSchedule = styled.div`
-    margin-top:120px;
+    margin-bottom:40px;
     padding:0px 26px;
+
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 const Container = styled.div`
     position: relative;
-    max-height: 680px;
+    max-height: 780px;
     overflow-x: hidden;
     overflow-y:hidden;
     display: block;
@@ -164,6 +177,7 @@ const Background = styled.div`
     z-index: -1;
 
     img{
+        object-fit: cover;
         width: 100%;
         height:420px;
     }
@@ -192,11 +206,12 @@ const ImageTtitle = styled.div`
 `
 
 const ContentMeta = styled.div`
-    max-width: 874px;
+    min-width: 874px;
 
 `
 
 const Controls = styled.div`
+    margin:26px 26px;
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
@@ -301,6 +316,7 @@ const GroupWatch = styled.div`
 `
 const SubTitle = styled.div`
     color:rgb(249,249,249);
+    width: 100% !important;
     font-size:15px;
     min-height:20px;
     padding:16px 26px;
@@ -311,8 +327,9 @@ const SubTitle = styled.div`
 `
 
 const Description = styled.div`
+    font-weight: 700;
     line-height: 1.4;
-    font-size:25px;
+    font-size:2.1rem;
     padding: 20px 26px;
     color: rgb(249,249,249);
 

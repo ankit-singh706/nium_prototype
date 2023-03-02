@@ -187,22 +187,21 @@ const PolicyRow = styled.p`
 
 const menu = [
     {
-        name: "Program Guides",
+        name: "ICC Boards",
         links: [
-            { title: "Rough Around The Edges", url: "www.openfit.com" },
-            { title: "Xtend Barre", url: "www.openfit.com" },
-            { title: "600 Seconds", url: "www.openfit.com" },
-            { title: "Yoga52", url: "www.openfit.com" }
+            { title: "BCCI", url: "#" },
+            { title: "PCB", url: "#" },
+            { title: "ECB", url: "#" },
+            { title: "Australia Cricket Board", url: "#" }
         ]
     },
     {
         name: "About Us",
         links: [
-            { title: "About Openfit", url: "www.openfit.com" },
-            { title: "Help and Feedback", url: "www.openfit.com" },
-            { title: "Terms and Condition", url: "www.openfit.com" },
-            { title: "Privacy Policy", url: "www.openfit.com" },
-            { title: "FAQ", url: "www.openfit.com" }
+            { title: "ICC Events", url: "#" },
+            { title: "ICC News", url: "#" },
+            { title: "ICC Awards", url: "#" },
+            { title: "ICC TV", url: "https://app.icc.tv/" },
         ]
     }
 ];
@@ -231,26 +230,16 @@ const Foot = () => {
             {/* <HR /> */}
             <BottomBar>
             <Policy>
-                    <PolicyRow>© 2019 Openfit, LLC. All rights reserved.</PolicyRow>
+                    <PolicyRow>© ICC, All rights reserved.</PolicyRow>
                     <PolicyRow>
-                        +Results vary depending on starting point and effort. Exercise and
-                        proper diet are necessary to achieve and maintain weight loss and
-                        muscle definition. The testimonials featured may have used more than
-                        one product or extended the program to achieve their maximum
-                        results.
+                    The International Cricket Council (ICC) is the global governing body of cricket. It was founded as the Imperial Cricket Conference in 1909 by representatives from Australia, England and South Africa. It was renamed as the International Cricket Conference in 1965, and took up its current name in 1987. The ICC has its headquarters in Dubai, United Arab Emirates.
                     </PolicyRow>
                     <PolicyRow>
-                        Consult your physician and follow all safety instructions before
-                        beginning any exercise program or using any supplement or meal
-                        replacement product, especially if you have any unique medical
-                        conditions or needs. The contents on our website are for
-                        informational purposes only, and are not intended to diagnose any
-                        medical condition, replace the advice of a healthcare professional,
-                        or provide any medical advice, diagnosis, or treatment.
+                    The Chairman heads the board of directors and on 26 June 2014, Narayanaswami Srinivasan, the former president of BCCI, was announced as the first chairman of the council. The role of ICC president has become a largely honorary position since the establishment of the chairman role and other changes were made to the ICC constitution in 2014. It has been claimed that the 2014 changes have handed control to the 'Big Three' nations of England, India and Australia. The last ICC president was Zaheer Abbas, who was appointed in June 2015 following the resignation of Mustafa Kamal in April 2015. When the post of ICC president was abolished in April 2016, Shashank Manohar, who replaced Srinivasan in October 2015, became the first independent elected chairman of the ICC
                     </PolicyRow>
-                    <PolicyRow>
+                    {/* <PolicyRow>
                         As an Amazon Associate, we may earn from qualifying purchases.
-                    </PolicyRow>
+                    </PolicyRow> */}
                 </Policy>
                 {menu.map(({ name, links }) => (
                     <Menu>

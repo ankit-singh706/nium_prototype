@@ -77,3 +77,61 @@
 .canvas{
   height: 100vh !important;
 }
+
+.ticketBook{
+  width:150px;
+  padding:10px 20px;
+  border-radius:5px;
+  border:1px solid white;
+  background-color:transparent;
+  color:white;
+  font-size:1.1rem;
+  cursor:pointer;
+}
+
+.ticketBook:hover{
+  color:black;
+  background-color:white;
+}
+
+.info{
+  color: white;
+}
+
+.center{
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.content{
+  /* border: 1px solid red; */
+  display: flex;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+}
+
+.payHeading{
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  /* border: 1px solid red */
+}
+
+.payHeading p{
+  color: green;
+}
+
+.ud{
+  text-decoration: underline;
+}
+
+.sze{
+  height: 70px;
+}

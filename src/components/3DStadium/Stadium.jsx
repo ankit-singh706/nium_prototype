@@ -2,7 +2,7 @@
 import React, { Suspense,useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Model from '../../../public/Cricket_stadium';
+import Model from '../../../public/Stadium_final';
 import './stadium.css';
 
 

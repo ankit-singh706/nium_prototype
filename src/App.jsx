@@ -9,6 +9,7 @@ import Tickets from './pages/Tickets/Tickets'
 import Foot from './components/Footer/Footer'
 import Detail from './components/Detail/Detail'
 import Stadium from './components/3DStadium/Stadium';
+import Payment from './pages/Payments/Payment';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
           
           <Route path="/detail/:id" element={<Detail/>}></Route>
           <Route path="/stadiumview" element={<Stadium/>}></Route>
+          <Route path="/checkout" element={<Payment/>}></Route>
 
         </Routes>
         <Foot/>

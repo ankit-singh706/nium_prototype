@@ -5,23 +5,23 @@ import clsx from 'clsx'
 
 const movies = [
   {
-    name: 'Avenger',
-    price: 10,
+    name: 'T20',
+    price: 1000,
     occupied: [20, 21, 30, 1, 2, 8],
   },
   {
-    name: 'Joker',
-    price: 12,
+    name: 'Test Match',
+    price: 1200,
     occupied: [9, 41, 35, 11, 65, 26],
   },
   {
-    name: 'Toy story',
-    price: 8,
+    name: 'ODI',
+    price: 800,
     occupied: [37, 25, 44, 13, 2, 3],
   },
   {
-    name: 'the lion king',
-    price: 9,
+    name: 'IPL',
+    price: 900,
     occupied: [10, 12, 50, 33, 28, 47],
   },
 ]
@@ -52,7 +52,7 @@ export default function SeatMap() {
         You have selected <span className="count">{selectedSeats.length}</span>{' '}
         seats for the price of{' '}
         <span className="total">
-          {selectedSeats.length * selectedMovie.price}$
+          {selectedSeats.length * selectedMovie.price}&#8377;
         </span>
       </p>
     </div>
@@ -62,7 +62,7 @@ export default function SeatMap() {
 function Movies({ movie, onChange }) {
   return (
     <div className="Movies">
-      <label htmlFor="movie">Pick a movie</label>
+      <label htmlFor="movie">Pick a mode</label>
       <select
         id="movie"
         value={movie.name}
@@ -72,7 +72,7 @@ function Movies({ movie, onChange }) {
       >
         {movies.map(movie => (
           <option key={movie.name} value={movie.name}>
-            {movie.name} (${movie.price})
+            {movie.name} (&#8377;{movie.price})
           </option>
         ))}
       </select>
@@ -110,6 +110,8 @@ function Cinema({ movie, selectedSeats, onSelectedSeatsChange }) {
 
   return (
     <div className="Cinema">
+      {console.log(movie)}
+      {console.log(selectedSeats)}
       <div className="screen" />
 
       <div className="seats">
